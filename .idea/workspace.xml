@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="320ee5c7-c56c-40a7-b069-e60b72fe754c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/springboot-demo/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/springboot-demo/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/springboot-jpa/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/springboot-jpa/src/main/resources/application.properties" />
-    </list>
+    <list default="true" id="320ee5c7-c56c-40a7-b069-e60b72fe754c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/springboot-demo/target/" />
     <ignored path="$PROJECT_DIR$/springboot-jpa/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -785,10 +781,18 @@
       <updated>1524706640871</updated>
       <workItem from="1524706644087" duration="2793000" />
     </task>
+    <task id="LOCAL-00001" summary="修改数据库">
+      <created>1524710733456</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524710733456</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3379000" />
+    <option name="totallyTimeSpent" value="3607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -856,6 +860,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改数据库" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改数据库" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
