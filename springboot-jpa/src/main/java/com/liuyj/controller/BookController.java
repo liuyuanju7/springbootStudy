@@ -3,6 +3,7 @@ package com.liuyj.controller;
 import com.liuyj.entity.Book;
 import com.liuyj.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,8 +52,48 @@ public class BookController {
         return bookService.findByName(name);
     }
 
+    @GetMapping(value= "/list/{name}")
+    public List<Book> findBooksLikeName(@PathVariable String name){
+        return bookService.findBooksByName(name);
+    }
+
     @GetMapping(value = "/list")
     public List<Book> findAllBook(){
         return bookService.findAllBooks();
     }
+
+    // JPA Controller
+    /**
+     *
+     * @param page 第几页  起始页 0
+     * @param size 每页 页数
+     * @return
+     */
+    @GetMapping(value="")
+    public Page<Book> findBookByPage(int page,int size){
+        Page<Book> pages = bookService.findAllByPage(page,size);
+        // pages.getContent(); 对应数据实体
+        return pages;
+    }
+
+    @GetMapping(value="")
+    public List<Book> findBooksByDesNotNull(){
+        return bookService.findBooksByDesNotNull();
+    }
+
+    @RequestMapping(value="")
+    public List<Book> findByPriceRange(double price1,double price2){
+        return bookService.findByPriceRange(price1,price2);
+    }
+
+    @RequestMapping(value = "/{name}")
+    public List<Book> findBookByNameLike(@PathVariable String name){
+        return bookService.findBookByNameLike(name);
+    }
+
+    @GetMapping(value = "")
+    public Book findByQueryId(Integer id){
+        return bookService.findByQueryId(id);
+    }
+
 }

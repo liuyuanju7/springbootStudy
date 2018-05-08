@@ -16,8 +16,8 @@ import java.util.List;
  */
 //该注解相当于 在每个方法前 添加 @ResponseBody
 @RestController
-@RequestMapping("/account")
-public class Accountcontroller {
+@RequestMapping("/accounts")
+public class AccountController {
 
     @Autowired
     private AccountService accountService;

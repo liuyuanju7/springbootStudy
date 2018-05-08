@@ -1,9 +1,13 @@
 package com.liuyj.service.impl;
 
 import com.liuyj.entity.Book;
+import com.liuyj.repository.BookJpaRepository;
 import com.liuyj.repository.BookRepository;
 import com.liuyj.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +23,8 @@ public class BookServiceImpl implements BookService{
 
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private BookJpaRepository jpaRepository;
 
     //保存 或 修改
     @Override
@@ -47,4 +53,39 @@ public class BookServiceImpl implements BookService{
     public List<Book> findAllBooks() {
         return (List<Book>)bookRepository.findAll();
     }
+
+    @Override
+    public List<Book> findBooksByName(String name) {
+        return bookRepository.findBooksByNameContaining(name);
+    }
+
+    //JPA Repository
+    @Override
+    public Page<Book> findAllByPage(int page, int size) {
+        Sort sort = new Sort(Sort.Direction.ASC,"id");
+      //不带排序  jpaRepository.findAll(new PageRequest(page,size));
+        return jpaRepository.findAll(new PageRequest(page,size,sort));
+    }
+
+    @Override
+    public List<Book> findBooksByDesNotNull() {
+        return jpaRepository.findBooksByDesNotNull();
+    }
+
+    @Override
+    public List<Book> findByPriceRange(double price1, double price2) {
+        return jpaRepository.findByPriceRange(price1,price2);
+    }
+
+    @Override
+    public List<Book> findBookByNameLike(String name) {
+        return jpaRepository.findBookByNameLike(name);
+    }
+
+    @Override
+    public Book findByQueryId(Integer id) {
+        return jpaRepository.findByQueryId(id);
+    }
+
+
 }
