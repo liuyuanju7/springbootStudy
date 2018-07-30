@@ -76,10 +76,10 @@ public class BookController {
         return pages;
     }
 
-    @GetMapping(value="")
-    public List<Book> findBooksByDesNotNull(){
-        return bookService.findBooksByDesNotNull();
-    }
+//    @GetMapping(value="")
+//    public List<Book> findBooksByDesNotNull(){
+//        return bookService.findBooksByDesNotNull();
+//    }
 
     @RequestMapping(value="")
     public List<Book> findByPriceRange(double price1,double price2){
